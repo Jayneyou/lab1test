@@ -1,62 +1,126 @@
-@charset "UTF-8";
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Rock+Salt&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;1,200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;1,200&family=Pathway+Gothic+One&display=swap');
-
-body {
-    line-height: 1.2;
-    width: 75%;
-    justify-content: center;
-    margin: 50px auto;
+html {
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
-#title {
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-image: url("/img/header.jpg");
+    background-size: cover;
+    background-color: dimgrey;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.7rem;
+}
+
+/* song title */
+header h1 {
+    font-size: 2rem;
+    font-family: "Rock Salt", cursive;
+    margin: 0;
     text-align: center;
+    padding: 1rem 0;
+}
+
+/* sub-title */
+header h3 {
+    font-family: "Architects Daughter", cursive;
+    font-size: 1.5rem;
+    text-align: right;
+    margin: 0;
+    width: 65%;
 }
 
 main {
-    column-count: 3;
-    justify-content: center;
+    background-color: black;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
-main p {
+/* lyrics */
+main>section {
+    background-color: #E5E1DA;
+    color: black;
+    flex-basis: 70%;
+    text-align: center;
+    padding: 1rem 1rem;
+}
+
+main>section p {
+    line-height: 1.5;
+    font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0;
+}
+
+/* artist */
+main>aside {
+    background-image: url("/img/singer.jpeg");
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.7rem 1.2rem;
+}
+
+/* artist title */
+main>aside h4 {
+    font-size: 1.25rem;
+    font-family: "Rock Salt", cursive;
+    margin: 1rem auto;
+}
+
+/* artist paragraph */
+main>aside p {
+    width: 85%;
+    font-size: 0.8rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
     text-align: justify;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.4;
+    margin: 0;
 }
 
-main p:nth-child(n+2) {
-    text-indent: 1em;
+/* artist image */
+main>aside img {
+    width: 85%;
+    margin-top: 1rem;
 }
 
-aside {
-    width: 140px;
+/* footer */
+footer {
+    background-color: darkgray;
+    color: #fff
 }
 
-aside p {
-    border: 2px solid black;
-    font-family: "Karla", sans-serif;
-    font-size: 30px;
-    text-transform: uppercase;
+footer p {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: "Architects Daughter", cursive;
 }
 
-h1 {
-    font-family: "Pathway Gothic One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    text-transform: uppercase;
-    font-size: 3em;
-    letter-spacing: 4px;
-    transform: scale(1, 2);
-}
-
-h2 {
-    font-family: "Oswald", sans-serif;
-    text-transform: uppercase;
-}
-
-h4 {
-    text-align: left;
-    font-family: "Oswald", sans-serif;
+/* media query */
+@media screen and (max-width: 600px) {
+    main {
+        flex-direction: column;
+    }
 }
